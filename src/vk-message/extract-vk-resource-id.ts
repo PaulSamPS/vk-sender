@@ -1,7 +1,7 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 
 export const extractVkResourceId = (urls: string[]) => {
-  return urls.map((urlString) => {
+  const result = urls.map((urlString) => {
     try {
       const url = new URL(urlString);
       const query = url.searchParams.get('z');
@@ -34,4 +34,6 @@ export const extractVkResourceId = (urls: string[]) => {
       );
     }
   });
+
+  return result.join(',');
 };

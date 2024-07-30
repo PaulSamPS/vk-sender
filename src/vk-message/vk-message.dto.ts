@@ -1,5 +1,5 @@
 export class VkMessageDto {
   message: string;
-  attachment?: string;
+  attachment?: string[];
   user_ids: string;
 }

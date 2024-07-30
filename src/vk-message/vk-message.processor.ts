@@ -5,6 +5,7 @@ import { VkMessageDto } from './vk-message.dto';
 import { FormData } from 'formdata-node';
 import axios from 'axios';
 import { Job } from 'bull';
+import { extractVkResourceId } from './extract-vk-resource-id';
 
 @Processor('messages')
 @Injectable()
@@ -22,7 +23,10 @@ export class VkMessageProcessor {
     data.append('message', job.data.message);
     data.append('group_id', this.configService.get('GROUP_ID'));
     data.append('v', this.configService.get('API_VERSION'));
-    data.append('attachment', job.data.attachment);
+
+    if (job.data.attachment) {
+      data.append('attachment', extractVkResourceId(job.data.attachment));
+    }
 
     try {
       await axios.post(url, data);

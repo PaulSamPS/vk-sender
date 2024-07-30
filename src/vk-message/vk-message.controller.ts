@@ -13,7 +13,7 @@ const urls = [
 @Controller('vk-message')
 export class VkMessageController {
   constructor(private readonly vkMessageService: VkMessageService) {}
-  // 15967790,
+
   @Post('send-message')
   async getHello(@Body() dto: VkMessageDto) {
     const user_ids = await this.vkMessageService.getUsersIds();
