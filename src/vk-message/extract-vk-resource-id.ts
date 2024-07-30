@@ -1,6 +1,6 @@
 import { HttpException, HttpStatus } from '@nestjs/common';
 
-export const extractResourceId = (urls: string[]) => {
+export const extractVkResourceId = (urls: string[]) => {
   return urls.map((urlString) => {
     try {
       const url = new URL(urlString);
