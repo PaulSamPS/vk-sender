@@ -22,6 +22,7 @@ export class VkMessageService {
     }
   }
 
+  // TODO заменить на актуальные данные
   async getUsersIds(): Promise<string> {
     const ids = '649424790,471261080,15967790';
 
