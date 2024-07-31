@@ -14,6 +14,7 @@ export class VkMessageService {
 
     for (let i = 0; i < totalUsers; i += chunkSize) {
       const chunk = user_ids.slice(i, i + chunkSize);
+      console.log('work2');
       await this.messageQueue.add({
         user_ids: chunk.toString(),
         message: dto.message,

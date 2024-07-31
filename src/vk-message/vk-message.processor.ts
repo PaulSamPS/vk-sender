@@ -15,6 +15,7 @@ export class VkMessageProcessor {
   @Process()
   async sendMessage(job: Job<VkMessageDto>): Promise<{ message: string }> {
     const url = 'https://api.vk.com/method/messages.send';
+    console.log('work3');
 
     const data = new FormData();
     data.append('access_token', this.configService.get('TOKEN'));

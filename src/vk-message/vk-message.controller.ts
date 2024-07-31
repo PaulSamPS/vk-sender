@@ -9,6 +9,7 @@ export class VkMessageController {
   @Post('send-message')
   async getHello(@Body() dto: VkMessageDto) {
     const user_ids = await this.vkMessageService.getUsersIds();
+    console.log('work');
     return await this.vkMessageService.sendMessages({
       message: dto.message,
       attachment: dto.attachment,

@@ -30,7 +30,7 @@ describe('VkMessageProcessor (e2e)', () => {
     data: {
       user_ids: '123,456',
       message: 'Test message',
-      attachment: ['https://vk.com/photo123_456'],
+      attachment: ['https://vk.com/?z=photo123_456'],
     },
   } as Job;
 
