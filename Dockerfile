@@ -1,5 +1,4 @@
 FROM node:20.15
-RUN apt-get update && apt-get install -y redis-tools
 WORKDIR /usr/src/app
 COPY package.json yarn.lock ./
 RUN yarn install
